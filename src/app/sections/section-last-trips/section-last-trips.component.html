@@ -1,0 +1,29 @@
+<div class="section-container">
+    <h2>
+        Latest Trips
+    </h2>
+    <table class="table table-inverse table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Account Name</th>
+                <th>Quote</th>
+                <th>RTA</th>
+                <th>Creation Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let trip of trips">
+                <td>{{ trip.id }}</td>
+                <td>{{ trip.account.name }}</td>
+                <td>{{ trip.quote }}</td>
+                <td>{{ trip.RTA | date: 'short' }}</td>
+                <td>{{ trip.creationDate | date: 'short' }}</td>
+                <td>Status</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+

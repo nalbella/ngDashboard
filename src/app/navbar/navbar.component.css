@@ -1,0 +1,25 @@
+.logo{
+    color: #fff;
+    font-size: 1.4em;
+}
+
+.logo-left{
+    color: black;
+    padding: 3x 5px 3px 8px;
+    border-radius: 4px;
+}
+
+.logo-right{
+    background-color: blue;
+    padding: 3x 5px 3px 8px;
+    margin-left: 2px;
+    border-radius: 4px;
+}
+
+.second-line{
+    padding: 3x 5px 3px 8px;
+    margin-left: 4px;
+    color: black;
+    font-size: 1em;
+}
+

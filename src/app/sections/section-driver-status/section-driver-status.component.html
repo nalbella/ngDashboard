@@ -1,0 +1,8 @@
+<div class="section-container">
+    <h2>Driver Status Screen</h2>
+    <div class="card-deck drivers">
+        <div *ngFor="let driver of drivers">
+            <app-driver [driverInput]="driver"></app-driver>
+        </div>
+    </div>
+</div>

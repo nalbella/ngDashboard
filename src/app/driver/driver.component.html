@@ -1,0 +1,10 @@
+<div class="card mb-3 shadow block-status" [ngStyle]="{'background-color': color}">
+    <div class="card-header name">
+        {{ driverInput.name }}
+    </div>
+    <div class="card-body status">
+        {{ driverInput.active }}
+    </div>
+    <button (click)="toggleStatus(driverInput.active)" 
+      class="btn btn-default action">{{ buttonText }}</button>
+</div>
