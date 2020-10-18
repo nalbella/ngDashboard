@@ -18,6 +18,7 @@ import { LieChartComponent } from './charts/lie-chart/lie-chart.component';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { SectionDriverStatusComponent } from './sections/section-driver-status/section-driver-status.component';
 import { DriverComponent } from './driver/driver.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DriverComponent } from './driver/driver.component';
     LieChartComponent,
     PieChartComponent,
     SectionDriverStatusComponent,
-    DriverComponent
+    DriverComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
