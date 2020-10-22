@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { appRoutes } from '../routes';
-
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ChartsModule } from 'ng2-charts';
 
@@ -19,6 +19,9 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { SectionDriverStatusComponent } from './sections/section-driver-status/section-driver-status.component';
 import { DriverComponent } from './driver/driver.component';
 import { PaginationComponent } from './pagination/pagination.component';
+
+//Services
+import { TripsDataService } from './services/trips-data.service';
 
 @NgModule({
   declarations: [
@@ -39,9 +42,12 @@ import { PaginationComponent } from './pagination/pagination.component';
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    TripsDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

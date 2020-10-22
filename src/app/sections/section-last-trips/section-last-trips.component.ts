@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Trip } from '../../shared/trip';
+import { TripsDataService } from '../../services/trips-data.service';
 
 @Component({
   selector: 'app-section-last-trips',
@@ -8,28 +9,40 @@ import { Trip } from '../../shared/trip';
 })
 export class SectionLastTripsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _tripsData: TripsDataService) { }
 
-  trips: Trip[] = [
-    {id: 1, account: 
-      {id: 1, name: 'John Bercow', postCode: 'w12 8py', email: 'nalbella@gmail.com'}, 
-      quote: 30, RTA: new Date(2020, 9, 1), creationDate: new Date(2020, 9, 1)},
-    {id: 2, account: 
-      {id: 1, name: 'John Bercow', postCode: 'w12 8py', email: 'nalbella@gmail.com'}, 
-      quote: 30, RTA: new Date(2020, 9, 1), creationDate: new Date(2020, 9, 1)},
-    {id: 3, account: 
-      {id: 1, name: 'John Bercow', postCode: 'w12 8py', email: 'nalbella@gmail.com'}, 
-      quote: 30, RTA: new Date(2020, 9, 1), creationDate: new Date(2020, 9, 1)},
-    {id: 4, account: 
-      {id: 1, name: 'John Bercow', postCode: 'w12 8py', email: 'nalbella@gmail.com'}, 
-      quote: 30, RTA: new Date(2020, 9, 1), creationDate: new Date(2020, 9, 1)},
-    {id: 5, account: 
-      {id: 1, name: 'John Bercow', postCode: 'w12 8py', email: 'nalbella@gmail.com'}, 
-      quote: 30, RTA: new Date(2020, 9, 1), creationDate: new Date(2020, 9, 1)},
-
-  ];
+  trips: Trip[];
+  total = 0;
+  page = 1;
+  limit = 10;
+  loading = false;
 
   ngOnInit(): void {
+    this.getTrips();
   }
 
+  getTrips(): void {
+    this._tripsData.getTrips(this.page, this.limit)
+      .subscribe(res => {
+        // console.log('Result from GetTrips: ', res);
+        this.trips = res['page']['data'];
+        this.total = res['page'].total;
+        this.loading = false;
+      })
+  }
+
+  goToPrevious(): void {
+    this.page--;
+    this.getTrips();
+  }
+
+  goToNext(): void {
+    this.page++;
+    this.getTrips();
+  }
+  
+  goToPage(n: number): void {
+    this.page = n;
+    this.getTrips();
+  }
 }
