@@ -9,6 +9,6 @@ export class TripsDataService {
 
     getTrips(pageIndex: number, pageSize: number) {
         return this._http.get('http://localhost:5000/api/trip/' + pageIndex + '/' + pageSize)
-          .map((res: Response) => res.json());
+        .map(res => res );
     }
 }

@@ -17,9 +17,9 @@
             <tr *ngFor="let trip of trips">
                 <td>{{ trip.id }}</td>
                 <td>{{ trip.account.name }}</td>
-                <td>{{ trip.quote }}</td>
-                <td>{{ trip.RTA | date: 'short' }}</td>
-                <td>{{ trip.creationDate | date: 'short' }}</td>
+                <td>{{ trip.quotedPrice }}</td>
+                <td>{{ trip.rta | date: 'short' }}</td>
+                <td>{{ trip.createdDate | date: 'short' }}</td>
                 <td>Status</td>
             </tr>
         </tbody>
