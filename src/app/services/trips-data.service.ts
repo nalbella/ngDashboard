@@ -13,4 +13,14 @@ export class TripsDataService {
         //.subscribe(response => console.log(response));
         .pipe(map(res => res));
     }
+
+    getTripsByAccount(n: number) {
+        return this._http.get<Response>('http://localhost:5000/api/trip/byaccount/' + n )
+        .pipe(map(res => res));
+    }
+
+    getTripsByState() {
+        return this._http.get<Response>('http://localhost:5000/api/trip/bystatus/')
+        .pipe(map(res => res));
+    }
 }

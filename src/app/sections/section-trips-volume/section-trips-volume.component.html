@@ -11,10 +11,10 @@
             </div>
             <div class="card mb-3 shadow card-theme">
                 <div class="card-header card-header-theme">
-                    <h5>Trips by provider</h5>
+                    <h5>Trips by account</h5>
                 </div>
                 <div class="card-body">
-                    <app-pie-chart></app-pie-chart>
+                    <app-pie-chart *ngIf='tripsDataByAccount' [inputData]='tripsDataByAccount' [limit]='3'></app-pie-chart>
                 </div>
             </div>
             <div class="card mb-3 shadow card-theme">
@@ -22,7 +22,7 @@
                     <h5>Trips by state</h5>
                 </div>
                 <div class="card-body">
-                    <app-pie-chart></app-pie-chart>
+                    <app-pie-chart *ngIf='tripsDataByState' [inputData]='tripsDataByState' [limit]='5'></app-pie-chart>
                 </div>
             </div>
         </div>
