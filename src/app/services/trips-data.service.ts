@@ -15,7 +15,7 @@ export class TripsDataService {
     }
 
     getTripsByAccount(n: number) {
-        return this._http.get<Response>('http://localhost:5000/api/trip/byaccount/' + n )
+        return this._http.get('http://localhost:5000/api/trip/byaccount/' + n )
         .pipe(map(res => res));
     }
 
