@@ -22,6 +22,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 
 //Services
 import { TripsDataService } from './services/trips-data.service';
+import { DriverService } from './services/driver.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TripsDataService } from './services/trips-data.service';
     HttpClientModule
   ],
   providers: [
-    TripsDataService
+    TripsDataService,
+    DriverService
   ],
   bootstrap: [AppComponent]
 })
